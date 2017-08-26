@@ -5,11 +5,11 @@ const app = express()
 
 // middleware
 app.use(bodyParser.json())
-app.use(require('./routes/api'))
+app.use('/api/v1', require('./routes/api'))
 app.use((err, req, res, next) => res.status(422).send({ error: err.message }))
 
-app.get('/', (req, res, next) => {
-  res.send("It's Alive!")
+app.get('/', (req, res) => {
+  res.send('working')
 })
 
 app.listen(process.env.port || 4000, () => {

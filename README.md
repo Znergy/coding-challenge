@@ -27,7 +27,7 @@
 
 ## Node Packages (NPM)
 Express - a lightweight NodeJS framework (npm i —save express)
-Babel - Write ES6, Babel translates accordingly (npm i —save-dev babel-cli babel-preset-es2015)
+Babel - Write ES6 Javascript, Babel translates accordingly (npm i —save-dev babel-cli babel-preset-es2015)
 RimRaf - Using to build a distribution directory, when ’npm build’ is run (npm i -save-dev )
 Body-Parser - Middleware for extracting body of the request before the route handler talks to MongoDB
 Mongoose - A layer of methods to save, edit, retrieve and delete from mongoDB

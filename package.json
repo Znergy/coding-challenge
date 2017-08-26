@@ -1,0 +1,32 @@
+{
+  "name": "coding-challenge",
+  "version": "1.0.0",
+  "description": "RESTful API with NodeJS and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "npm run build && node dist/index.js",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Znergy/coding-challenge.git"
+  },
+  "author": "Ryan Jones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Znergy/coding-challenge/issues"
+  },
+  "homepage": "https://github.com/Znergy/coding-challenge#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.8",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "mocha": "^3.5.0",
+    "rimraf": "^2.6.1"
+  }
+}

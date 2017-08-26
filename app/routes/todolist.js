@@ -9,9 +9,11 @@ router.get('/todolists', (req, res, next) => {
   })
 })
 
-// Get Single item
+// get single list
 router.get('/todolists/:id', (req, res, next) => {
-  res.send('Get single item working')
+  TodoList.findOne({_id: req.params.id}).then((todolist) => {
+    res.send(todolist)
+  }).catch(next)
 })
 
 // add list
@@ -30,9 +32,11 @@ router.put('/todolists/:id', (req,res, next) => {
   }).catch(next)
 })
 
-// delete item
-router.delete('/todolists/:id', (req, res, next) => {
-  res.send('delete working')
-})
+// // delete list
+// router.delete('/todolists/:id', (req, res, next) => {
+//   TodoList.findByIdAndRemove({_id: req.params.id}).then((todolist) => {
+//     res.send(todolist)
+//   }).catch(next)
+// })
 
 module.exports = router;

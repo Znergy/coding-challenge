@@ -11,9 +11,10 @@ router.get('/todolists', function (req, res, next) {
   });
 });
 
-// Get Single item
 router.get('/todolists/:id', function (req, res, next) {
-  res.send('Get single item working');
+  TodoList.findOne({ _id: req.params.id }).then(function (todolist) {
+    res.send(todolist);
+  }).catch(next);
 });
 
 // add list
@@ -32,9 +33,11 @@ router.put('/todolists/:id', function (req, res, next) {
   }).catch(next);
 });
 
-// delete item
-router.delete('/todolists/:id', function (req, res, next) {
-  res.send('delete working');
-});
+// // delete list
+// router.delete('/todolists/:id', (req, res, next) => {
+//   TodoList.findByIdAndRemove({_id: req.params.id}).then((todolist) => {
+//     res.send(todolist)
+//   }).catch(next)
+// })
 
 module.exports = router;

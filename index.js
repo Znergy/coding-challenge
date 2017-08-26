@@ -6,7 +6,7 @@ let port = 4000
 // let morgan = require('morgan')
 // let config = require('config')
 
-// console.log('NODE_ENV: ' + process.env.NODE_ENV)
+console.log('NODE_ENV: ' + process.env.NODE_ENV)
 // console.log(config.DBHost)
 
 mongoose.Promise = global.Promise

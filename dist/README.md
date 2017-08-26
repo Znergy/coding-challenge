@@ -25,16 +25,24 @@
 * The code should have automated tests
 * Share via code repository or zip (repo preferred)
 
+## Installation Instructions
+* Clone this repository
+* Navigate to the directory
+* Run 'npm install'
+* Choose between dev or test environments when starting the server
+  * Test: run 'NODE_ENV=test npm start' (this will set the environment to test)
+  * Dev: run 'npm start' or 'NODE_ENV=dev npm start' (defaults to dev, if no argument is given)
+
 ## Node Packages (NPM)
 * Express - a lightweight NodeJS framework (npm i —save express)
 * Babel - Write ES6 Javascript, Babel translates accordingly (npm i —save-dev babel-cli babel-preset-es2015)
-* RimRaf - Using to build a distribution directory, when ’npm build’ is run (npm i -save-dev )
-* Body-Parser - Middleware for extracting body of the request before the route handler talks to MongoDB
-* Mongoose - A layer of methods to save, edit, retrieve and delete from mongoDB
+* RimRaf - Using to build a distribution directory, when ’npm build’ is run (npm i -save-dev rimraf )
+* Body-Parser - Middleware for parsing the body of the request before the route handler talks to MongoDB (npm i --save body-parser)
+* Mongoose - A layer of methods to save, edit, retrieve and delete from mongoDB (npm i --save mongoose)
 
 ### Testing
 * Mocha - Flexible NodeJS test framework (npm i —save-dev mocha)
 * Assert - Provides a simple set of assertion tests
 * Request - Simple way to make http calls (npm install --save request)
-* Robomongo - To visually see the data in mongoDB (testing API)
+* Robomongo - To visually see the data in mongoDB
 * Postman - To test the API request/responses

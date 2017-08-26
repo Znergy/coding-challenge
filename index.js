@@ -4,10 +4,10 @@ let app = express()
 let mongoose = require('mongoose')
 let port = 4000
 // let morgan = require('morgan')
-// let config = require('config')
+let config = require('config')
 
 console.log('NODE_ENV: ' + process.env.NODE_ENV)
-// console.log(config.DBHost)
+console.log(config.DBHost)
 
 mongoose.Promise = global.Promise
 mongoose.connect(`mongodb://localhost/app_${process.env.NODE_ENV}`, {

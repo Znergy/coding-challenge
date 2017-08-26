@@ -34,7 +34,7 @@ describe('Code Challenge Application', function () {
   /** POST/ADD list **/
   describe("POST /api/todolists", function () {
     it("returns status code 200", function (done) {
-      request.post(base_url + '/api/todolists', function (err, response, body) {
+      request.post(base_url + '/api/v1/todolists', function (err, response, body) {
         if (err) {
           done(err);
           return;

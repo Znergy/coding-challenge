@@ -29,9 +29,9 @@
 * Clone this repository
 * Navigate to the directory
 * Run 'npm install'
-* Choose between dev or test environments
-  * Defaults to dev, you can switch to test by running 'export NODE_ENV=test' in the terminal
-* Run 'npm start' (server will load at localhost:4000)
+* Choose between dev or test environments when starting the server
+  * Test: run 'NODE_ENV=test npm start' (this will set the environment to test)
+  * Dev: run 'npm start' or 'NODE_ENV=dev npm start' (defaults to dev, if no argument is given)
 
 ## Node Packages (NPM)
 * Express - a lightweight NodeJS framework (npm i —save express)

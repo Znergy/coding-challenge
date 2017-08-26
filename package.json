@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --timeout 10000",
-    "start": "NODE_ENV=dev && npm run build && node dist/index.js",
+    "start": "npm run build && node dist/index.js $NODE_ENV=process.env.NODE_ENV || dev",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
   },
   "repository": {

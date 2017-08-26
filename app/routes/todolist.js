@@ -2,9 +2,11 @@ const express = require('express')
 const router = express.Router()
 const TodoList = require('../models/todolist')
 
-// Get All items
+// get all lists
 router.get('/todolists', (req, res, next) => {
-  res.send('Get all items working')
+  TodoList.find({}).then((todolists) => {
+    res.send(todolists)
+  })
 })
 
 // Get Single item

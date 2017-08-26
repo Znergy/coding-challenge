@@ -5,7 +5,7 @@ var request = require('request'),
     base_url = 'http://localhost:4000';
 
 describe('Code Challenge Application', function () {
-  // Get Single Item
+  // Get Single List
   describe('GET /api/v1/todolists', function () {
     it('return with status 200', function (done) {
       request.get(base_url + '/api/v1/todolists', function (err, res, body) {
@@ -18,4 +18,24 @@ describe('Code Challenge Application', function () {
       });
     });
   });
+
+  // var formData = {
+  //   username: 'ryanjones123',
+  //   title: 'Side Project',
+  //   category: 'programming',
+  //   tasks: [ "code", "eat"]
+  // }
+
+  // // Add List
+  // describe('POST /api/v1/todolists', () => {
+  //   it('return with status 200', (done) => {
+  //     request.post({url: `${base_url}/api/v1/todolists`, formData: formData}, (err, httpResponse, body) => {
+  //       if (err) {
+  //         return console.error('upload failed:', err)
+  //       }
+  //       console.log('Upload successful!  Server responded with:', body)
+  //       done()
+  //     })
+  //   })
+  // })
 });

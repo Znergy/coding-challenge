@@ -4,9 +4,11 @@ var express = require('express');
 var router = express.Router();
 var TodoList = require('../models/todolist');
 
-// Get All items
+// get all lists
 router.get('/todolists', function (req, res, next) {
-  res.send('Get all items working');
+  TodoList.find({}).then(function (todolists) {
+    res.send(todolists);
+  });
 });
 
 // Get Single item

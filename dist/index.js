@@ -14,7 +14,7 @@ var app = (0, _express2.default)();
 
 // middleware
 app.use(_bodyParser2.default.json());
-app.use('/api/v1', require('./routes/api'));
+app.use('/api/v1', require('./controllers/routes/api'));
 app.use(function (err, req, res, next) {
   return res.status(422).send({ error: err.message });
 });

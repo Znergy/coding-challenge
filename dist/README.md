@@ -26,15 +26,15 @@
 * Share via code repository or zip (repo preferred)
 
 ## Node Packages (NPM)
-Express - a lightweight NodeJS framework (npm i —save express)
-Babel - Write ES6 Javascript, Babel translates accordingly (npm i —save-dev babel-cli babel-preset-es2015)
-RimRaf - Using to build a distribution directory, when ’npm build’ is run (npm i -save-dev )
-Body-Parser - Middleware for extracting body of the request before the route handler talks to MongoDB
-Mongoose - A layer of methods to save, edit, retrieve and delete from mongoDB
+* Express - a lightweight NodeJS framework (npm i —save express)
+* Babel - Write ES6 Javascript, Babel translates accordingly (npm i —save-dev babel-cli babel-preset-es2015)
+* RimRaf - Using to build a distribution directory, when ’npm build’ is run (npm i -save-dev )
+* Body-Parser - Middleware for extracting body of the request before the route handler talks to MongoDB
+* Mongoose - A layer of methods to save, edit, retrieve and delete from mongoDB
 
 ### Testing
-Mocha - Flexible NodeJS test framework (npm i —save-dev mocha)
-Assert - Provides a simple set of assertion tests
-Request - Simple way to make http calls (npm install --save request)
-Robomongo - To visually see the data in mongoDB (testing API)
-Postman - To test the API request/responses
+* Mocha - Flexible NodeJS test framework (npm i —save-dev mocha)
+* Assert - Provides a simple set of assertion tests
+* Request - Simple way to make http calls (npm install --save request)
+* Robomongo - To visually see the data in mongoDB (testing API)
+* Postman - To test the API request/responses

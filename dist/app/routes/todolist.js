@@ -2,6 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
+var TodoList = require('../models/todolist');
 
 // Get All items
 router.get('/todolists', function (req, res, next) {
@@ -13,9 +14,11 @@ router.get('/todolists/:id', function (req, res, next) {
   res.send('Get single item working');
 });
 
-// add item
+// add list
 router.post('/todolists', function (req, res, next) {
-  res.send('post working');
+  TodoList.create(req.body).then(function (todolist) {
+    res.send({ message: 'Todo List Added!', todolist: todolist });
+  }).catch(next);
 });
 
 // update item

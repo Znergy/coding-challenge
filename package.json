@@ -4,8 +4,8 @@
   "description": "RESTful API with NodeJS and Express",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "start": "npm run build && node dist/index.js",
+    "test": "mocha --timeout 10000",
+    "start": "NODE_ENV=dev && npm run build && node dist/index.js",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
   },
   "repository": {

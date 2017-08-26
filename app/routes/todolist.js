@@ -32,11 +32,11 @@ router.put('/todolists/:id', (req,res, next) => {
   }).catch(next)
 })
 
-// // delete list
-// router.delete('/todolists/:id', (req, res, next) => {
-//   TodoList.findByIdAndRemove({_id: req.params.id}).then((todolist) => {
-//     res.send(todolist)
-//   }).catch(next)
-// })
+// delete list
+router.delete('/todolists/:id', (req, res, next) => {
+  TodoList.findByIdAndRemove({_id: req.params.id}).then((todolist) => {
+    res.send({ message: 'Todo List Succesfully Deleted', todolist})
+  }).catch(next)
+})
 
 module.exports = router;

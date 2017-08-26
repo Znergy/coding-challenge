@@ -11,6 +11,7 @@ router.get('/todolists', function (req, res, next) {
   });
 });
 
+// get single list
 router.get('/todolists/:id', function (req, res, next) {
   TodoList.findOne({ _id: req.params.id }).then(function (todolist) {
     res.send(todolist);
@@ -33,11 +34,11 @@ router.put('/todolists/:id', function (req, res, next) {
   }).catch(next);
 });
 
-// // delete list
-// router.delete('/todolists/:id', (req, res, next) => {
-//   TodoList.findByIdAndRemove({_id: req.params.id}).then((todolist) => {
-//     res.send(todolist)
-//   }).catch(next)
-// })
+// delete list
+router.delete('/todolists/:id', function (req, res, next) {
+  TodoList.findByIdAndRemove({ _id: req.params.id }).then(function (todolist) {
+    res.send({ message: 'Todo List Succesfully Deleted', todolist: todolist });
+  }).catch(next);
+});
 
 module.exports = router;

@@ -23,9 +23,13 @@ router.post('/todolists', function (req, res, next) {
   }).catch(next);
 });
 
-// update item
+// update list
 router.put('/todolists/:id', function (req, res, next) {
-  res.send('put working');
+  TodoList.findByIdAndUpdate({ _id: req.params.id }, req.body).then(function () {
+    TodoList.findOne({ _id: req.params.id }).then(function (todolist) {
+      res.send(todolist);
+    });
+  }).catch(next);
 });
 
 // delete item

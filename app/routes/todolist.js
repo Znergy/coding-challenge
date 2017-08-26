@@ -21,9 +21,13 @@ router.post('/todolists', (req, res, next) => {
   }).catch(next)
 })
 
-// update item
-router.put('/todolists/:id', (req, res, next) => {
-  res.send('put working')
+// update list
+router.put('/todolists/:id', (req,res, next) => {
+  TodoList.findByIdAndUpdate({_id: req.params.id}, req.body).then(() => {
+    TodoList.findOne({_id: req.params.id}).then((todolist) => {
+      res.send(todolist)
+    })
+  }).catch(next)
 })
 
 // delete item

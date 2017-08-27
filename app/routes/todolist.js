@@ -36,5 +36,5 @@ function updateTodolist(req, res) {
   })
 }
 
-//export all the functions ()
+// exporting functions to access in app.js
 module.exports = { getTodolists, getTodolist, postTodolist, deleteTodolist, updateTodolist }

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const TodoListSchema = new Schema({
+const TodolistSchema = new Schema({
   username: {
     type: String,
     unique: true,
@@ -23,14 +23,14 @@ const TodoListSchema = new Schema({
   }
 })
 
-TodoListSchema.pre('save', function (next) {
+TodolistSchema.pre('save', function (next) {
   let currentDate = new Date()
   if(!this.createdAt) {
     this.createdAt = currentDate.now
   }
-  next();
+  next()
 })
 
-const TodoList = mongoose.model('todolist', TodoListSchema);
+const Todolist = mongoose.model('todolist', TodolistSchema);
 
-module.exports = TodoList
+module.exports = Todolist

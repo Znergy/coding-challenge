@@ -2,10 +2,10 @@
   "name": "coding-challenge",
   "version": "1.0.0",
   "description": "RESTful API with NodeJS and Express",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "mocha --timeout 10000",
-    "start": "npm run build && node dist/index.js $NODE_ENV=process.env.NODE_ENV || dev",
+    "test": "NODE_ENV=test mocha --timeout 10000",
+    "start": "npm run build && node dist/app.js $NODE_ENV",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
   },
   "repository": {
@@ -20,13 +20,18 @@
   "homepage": "https://github.com/Znergy/coding-challenge#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "config": "^1.26.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.8",
+    "morgan": "^1.8.2",
     "request": "^2.81.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.1",
+    "chai-http": "^3.0.0",
+    "cross-env": "^5.0.5",
     "mocha": "^3.5.0",
     "rimraf": "^2.6.1"
   }

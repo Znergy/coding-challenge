@@ -131,4 +131,21 @@ describe('API Routes', () => {
       })
     })
   })
+  describe('/PUT/:id todolist', () => {
+    it('should UPDATE a todolist given the id but fail to a bad id', (done) => {
+      let todolist = new Todolist({ username: 'ryanjones', title: "project", category: "chores", tasks: ["clean"] })
+      todolist.save((err, todolist) => {
+        chai.request(app)
+        .put(`/api/v1/todolists/${todolist.id}`)
+        .send({ username: '', title: "project", category: "school", tasks: ["econ"] })
+        .end((err, res) => {
+          res.should.have.status(422)
+          res.body.should.be.a('object')
+          res.body.errors.username.should.have.property('kind').eql('required')
+          res.body.errors.username.should.have.property('path').eql('username')
+          done()
+        })
+      })
+    })
+  })
 })

@@ -13,13 +13,13 @@ describe('API Routes', () => {
 
   // wipe db prior to every test
   beforeEach((done) => {
-      Todolist.remove({}, (err) => {
-         done()
-      })
+    Todolist.remove({}, (err) => {
+       done()
+    })
   })
 
   describe('/GET todolist', () => {
-    it('it should GET all the todolists', (done) => {
+    it('should GET all the todolists', (done) => {
       chai.request(app)
         .get('/api/v1/todolists')
         .end((err, res) => {

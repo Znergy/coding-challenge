@@ -5,3 +5,39 @@ ul#todolistDetailView {
 #postForm h2 {
   margin-top: 0px;
 }
+
+.jumbotron h1 {
+  text-align: center;
+}
+
+.getPanel h2 {
+  margin-top: 0px;
+}
+
+.options h2 {
+  margin-top: 0px;
+}
+
+#getUlList {
+  padding-left: 0px;
+}
+
+.getList {
+  text-align: center;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  color: #333;
+  margin-top: 40px;
+  height: 70px;
+  background-color: #eee;
+}
+
+.copyright {
+  font-size: 20px;
+  padding-top: 20px;
+}

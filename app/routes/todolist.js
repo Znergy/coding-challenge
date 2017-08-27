@@ -1,42 +1,40 @@
-const express = require('express')
-const router = express.Router()
-const TodoList = require('../models/todolist')
+const mongoose = require('mongoose');
+const Todolist = require('../models/todolist');
 
-// get all lists
-router.get('/todolists', (req, res, next) => {
-  TodoList.find({}).then((todolists) => {
-    res.send(todolists)
+// get all todolists
+function getTodolists(req, res) {
+  Todolist.find({}, (err, todolists) => {
+    err ? res.status(422).send({error: err.message}) : res.json(todolists)
   })
-})
-
-// get single list
-router.get('/todolists/:id', (req, res, next) => {
-  TodoList.findOne({_id: req.params.id}).then((todolist) => {
-    res.send(todolist)
-  }).catch(next)
-})
-
-// add list
-router.post('/todolists', (req, res, next) => {
-  TodoList.create(req.body).then((todolist) => {
-    res.send({ message: 'Todo List Added!', todolist })
-  }).catch(next)
-})
-
-// update list
-router.put('/todolists/:id', (req,res, next) => {
-  TodoList.findByIdAndUpdate({_id: req.params.id}, req.body).then(() => {
-    TodoList.findOne({_id: req.params.id}).then((todolist) => {
-      res.send(todolist)
+}
+// get single todolist
+function getTodolist(req, res) {
+  Todolist.findOne({_id: req.params.id}, (err, todolist) => {
+    err ? res.status(422).send({error: err.message}) : res.json(todolist)
+  })
+}
+// add todolist
+function postTodolist(req, res) {
+  let newTodolist = new Todolist(req.body)
+  newTodolist.save((err, todolist) => {
+    err ? res.status(422).send({error: err.message}) : res.json({message: 'Todolist successfully added!', todolist})
+  })
+}
+// delete todolist
+function deleteTodolist(req, res) {
+  Todolist.remove({_id: req.params.id}, (err, result) => {
+    res.json({message: 'Todolist successfully deleted!'})
+  })
+}
+// update todolist
+function updateTodolist(req, res) {
+  Todolist.findById({_id: req.params.id}, (err, todolist) => {
+    if(err) res.status(422).send({error: err.message})
+    Object.assign(todolist, req.body).save((err, todolist) => {
+      err ? res.status(422).send({error: err.message}) : res.json({message: 'Todolist successfully updated!', todolist})
     })
-  }).catch(next)
-})
+  })
+}
 
-// delete list
-router.delete('/todolists/:id', (req, res, next) => {
-  TodoList.findByIdAndRemove({_id: req.params.id}).then((todolist) => {
-    res.send({ message: 'Todo List Succesfully Deleted', todolist})
-  }).catch(next)
-})
-
-module.exports = router;
+//export all the functions ()
+module.exports = { getTodolists, getTodolist, postTodolist, deleteTodolist, updateTodolist }

@@ -22,12 +22,13 @@ if(config.util.getEnv('NODE_ENV') !== 'test') {
     app.use(morgan('combined'))
 }
 
+app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.text())
 app.use(bodyParser.json({ type: 'application/json'}))
 
-app.get("/", (req, res) => res.sendFile(__dirname + '/public/index.html'))
+app.get("/", (req, res) => res.sendFile('index.html'))
 
 app.route("/api/v1/todolists")
     .get(todolist.getTodolists)

@@ -112,4 +112,23 @@ describe('API Routes', () => {
       })
     })
   })
+  describe('/PUT/:id todolist', () => {
+    it('should UPDATE a todolist given the id', (done) => {
+      let todolist = new Todolist({ username: 'ryanjones', title: "project", category: "chores", tasks: ["clean"] })
+      todolist.save((err, todolist) => {
+        chai.request(app)
+        .put(`/api/v1/todolists/${todolist.id}`)
+        .send({ username: 'ryanjones', title: "homework", category: "school", tasks: ["econ"] })
+        .end((err, res) => {
+          res.should.have.status(200)
+          res.body.should.be.a('object')
+          res.body.should.have.property('message').eql('Todolist successfully updated!')
+          res.body.todolist.should.have.property('title').eql('homework')
+          res.body.todolist.should.have.property('category').eql('school')
+          res.body.todolist.should.have.property('tasks').eql(['econ'])
+          done()
+        })
+      })
+    })
+  })
 })

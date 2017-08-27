@@ -29,8 +29,8 @@
 * Clone this repository
 * Navigate to the directory
 * Run 'npm install'
-* Choose between dev or test environments when starting the server
-  * Test: run 'NODE_ENV=test npm start' (this will set the environment to test)
+* Choose between dev or prod environments when starting the server
+  * Prod: run 'NODE_ENV=prod npm start' (this will set the environment to prod and use the prod database)
   * Dev: run 'npm start' or 'NODE_ENV=dev npm start' (defaults to dev, if no argument is given)
 
 ## Node Packages (NPM)

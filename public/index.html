@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Node/Express App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-3">Todo List Extravaganza</h1>
+    </div>
+    <div class="postPanel">
+      <form id="postForm">
+        <div class="col-md-6">
+          <div class="form-group">
+            <h2>Add a Todo List</h2>
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+          </div>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" class="form-control" name="category" id="category" placeholder="Enter Category">
+          </div>
+          <div class="form-group">
+            <label for="task1">First Task</label>
+            <input type="text" class="form-control" name="task1" id="task1" placeholder="Enter your first task">
+          </div>
+          <div class="form-group">
+            <label for="task2">Second Task</label>
+            <input type="text" class="form-control" name="task2" id="task2" placeholder="Enter your second task">
+          </div>
+          <div class="form-group">
+            <label for="task3">Third Task</label>
+            <input type="text" class="form-control" name="task3" id="task3" placeholder="Enter your third task">
+          </div>
+          <button type="submit" class="form-control" class="btn btn-primary" name="button">Add</button>
+        </div>
+      </form>
+    </div>
+    <div class="getPanel">
+      <div class="getListView">
+        <form>
+          <div class="col-md-6">
+            <ul id="getUlList">
+              <div class="form-group">
+                <li class="form-control">Jordan</li>
+              </div>
+              <div class="form-group">
+                <li class="form-control">Cassandra</li>
+              </div>
+            </ul>
+          </div>
+        </form>
+      </div>
+      <div class="getSingleView">
+        <form>
+          <div class="col-md-6">
+            <ul id="todolistDetailView">
+              <div class="form-group">
+                <li class="form-control">Username: Jordan</li>
+              </div>
+              <div class="form-group">
+                <li class="form-control">Title: Homework</li>
+              </div>
+              <div class="form-group">
+                <li class="form-control">Category: School</li>
+              </div>
+              <div class="form-group">
+                <li class="form-control">Task #1: ECON</li>
+              </div>
+              <div class="form-group">
+                <li class="form-control">Task #2: Spanish</li>
+              </div>
+              <div class="form-group">
+                <li class="form-control">Task #3: Math</li>
+              </div>
+            </ul>
+            <div id="updateInputs">
+              <div class="form-group">
+                <input type="text" name="username" class="form-control" id="updateUsername" placeholder="Jordan">
+              </div>
+              <div class="form-group">
+                <input type="text" name="title" class="form-control" id="updateTitle" placeholder="Homework">
+              </div>
+              <div class="form-group">
+                <input type="text" name="category" class="form-control" id="updateCategory" placeholder="School">
+              </div>
+              <div class="form-group">
+                <input type="text" name="task1" class="form-control" id="updateTask1" placeholder="ECON">
+              </div>
+              <div class="form-group">
+                <input type="text" name="task2" class="form-control" id="updateTask2" placeholder="Spanish">
+              </div>
+              <div class="form-group">
+                <input type="text" name="task3" class="form-control" id="updateTask3" placeholder="Math">
+              </div>
+            </div>
+            <button type="button" name="update" class="btn-primary" id="updateTodolist">Update</button>
+            <button type="button" name="delete" class="btn-warning" id="deleteTodolist">Delete</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <form>
+        <button type="button" name="activatePostPanel" id="activatePostPanel" class="c-btn form-control">POST</button>
+        <button type="button" name="activateGetPanel" id="activateGetPanel" class="c-btn form-control">GET</button>
+      </form>
+    </div>
+    <div class="col-md-1"></div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>

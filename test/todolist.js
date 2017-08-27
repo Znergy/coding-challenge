@@ -96,7 +96,7 @@ describe('API Routes', () => {
     })
   })
   describe('/GET/:id todolist', () => {
-    it('should GET a todolist by the given id but fail to a bad id', (done) => {
+    it('should fail to GET a todolist due to a bad id', (done) => {
       let todolist = new Todolist({ username: 'ryanjones', title: "project", category: "chores", tasks: ["clean"] })
       todolist.save((err, todolist) => {
         chai.request(app)
@@ -132,7 +132,7 @@ describe('API Routes', () => {
     })
   })
   describe('/PUT/:id todolist', () => {
-    it('should UPDATE a todolist given the id but fail to a bad id', (done) => {
+    it('should fail to UPDATE due to an empty username being passed', (done) => {
       let todolist = new Todolist({ username: 'ryanjones', title: "project", category: "chores", tasks: ["clean"] })
       todolist.save((err, todolist) => {
         chai.request(app)

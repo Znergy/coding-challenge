@@ -16,7 +16,7 @@ mongoose.connect(config.DBHost, {
 });
 
 let db = mongoose.connection
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'connection error:'))
 
 if(config.util.getEnv('NODE_ENV') !== 'test') {
     app.use(morgan('combined'))
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.text())
 app.use(bodyParser.json({ type: 'application/json'}))
 
-app.get("/", (req, res) => res.json({message: "Welcome to Todo List Extravaganza"}))
+app.get("/", (req, res) => res.sendFile(__dirname + '/public/index.html'))
 
 app.route("/api/v1/todolists")
     .get(todolist.getTodolists)

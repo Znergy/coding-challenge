@@ -95,4 +95,21 @@ describe('API Routes', () => {
       })
     })
   })
+  describe('/GET/:id todolist', () => {
+    it('should GET a todolist by the given id but fail to a bad id', (done) => {
+      let todolist = new Todolist({ username: 'ryanjones', title: "project", category: "chores", tasks: ["clean"] })
+      todolist.save((err, todolist) => {
+        chai.request(app)
+        .get(`/api/v1/todolists/123`)
+        .send(todolist)
+        .end((err, res) => {
+          res.should.have.status(422)
+          res.body.should.be.a('object')
+          res.body.should.have.property('name').eql('CastError')
+          res.body.should.have.property('kind').eql('ObjectId')
+          done()
+        })
+      })
+    })
+  })
 })

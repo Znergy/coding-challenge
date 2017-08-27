@@ -42,30 +42,3 @@ app.listen(port)
 console.log(`Listening on port: ${port}`)
 
 module.exports = app
-
-
-
-
-
-
-
-
-
-
-// console.log('Database URL: ' + config.DBHost)
-//
-// mongoose.Promise = global.Promise
-// mongoose.connect(dbUrl, {
-//   useMongoClient: true
-// })
-//
-// // middleware
-// app.use(bodyParser.json())
-// app.use('/api/v1', api)
-// app.use((err, req, res, next) => res.status(422).send({ error: err.message }))
-//
-// let server = app.listen(port, () => {
-//   console.log(`Now listening on port: ${port}`)
-// })
-//
-// module.exports = server

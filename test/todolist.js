@@ -148,4 +148,21 @@ describe('API Routes', () => {
       })
     })
   })
+  describe('/DELETE/:id todolist', () => {
+    it('should DELETE a todolist given the id', (done) => {
+      let todolist = new Todolist({ username: 'ryanjones', title: "project", category: "chores", tasks: ["clean"] })
+      todolist.save((err, todolist) => {
+        chai.request(app)
+        .delete(`/api/v1/todolists/${todolist.id}`)
+        .end((err, res) => {
+          res.should.have.status(200)
+          res.body.should.be.a('object')
+          res.body.should.have.property('message').eql('Todolist successfully deleted!')
+          res.body.result.should.have.property('ok').eql(1)
+          res.body.result.should.have.property('n').eql(1)
+          done()
+        })
+      })
+    })
+  })
 })

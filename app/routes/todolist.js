@@ -23,7 +23,7 @@ function postTodolist(req, res) {
 // delete todolist
 function deleteTodolist(req, res) {
   Todolist.remove({_id: req.params.id}, (err, result) => {
-    res.json({message: 'Todolist successfully deleted!'})
+    res.json({message: 'Todolist successfully deleted!', result})
   })
 }
 // update todolist

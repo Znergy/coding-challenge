@@ -54,4 +54,25 @@ describe('API Routes', () => {
         })
     })
   })
+  describe('/POST todolist', () => {
+    it('should NOT POST a todolist due to missing username field', (done) => {
+      let todolist = {
+          title: "Side Project",
+          category: "programming",
+          tasks: ["code", "eat", "code"]
+      }
+      chai.request(app)
+        .post('/api/v1/todolists')
+        .send(todolist)
+        .end((err, res) => {
+          res.should.have.status(422)
+          res.body.should.be.a('object')
+          res.body.should.have.property('errors')
+          res.body.errors.should.have.property('username')
+          res.body.errors.username.should.have.property('kind').eql('required')
+          res.body.errors.username.should.have.property('message').eql('Username field is required')
+          done()
+        })
+    })
+  })
 })

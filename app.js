@@ -26,7 +26,7 @@ if(config.util.getEnv('NODE_ENV') !== 'test') {
     app.use(morgan('combined'))
 }
 
-if(config.util.getEnv('NODE_ENV') !== 'prod')
+if(config.util.getEnv('NODE_ENV') !== 'prod') {
   todolist.populateDB()
 }
 

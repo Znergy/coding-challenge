@@ -7,6 +7,10 @@ const config = require('config')
 const todolist = require('./app/routes/todolist')
 let port = 4000
 
+console.log(`NODE_ENV: ${config.util.getEnv('NODE_ENV')}`)
+console.log(`Database: ${config.DBHost}`)
+console.log(`GitHub Repo: https://github.com/znergy/coding-challenge`)
+
 mongoose.Promise = global.Promise
 mongoose.connect(config.DBHost, {
   useMongoClient: true,
@@ -17,6 +21,8 @@ mongoose.connect(config.DBHost, {
 
 let db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
+
+todolist.populateDB()
 
 if(config.util.getEnv('NODE_ENV') !== 'test') {
     app.use(morgan('combined'))

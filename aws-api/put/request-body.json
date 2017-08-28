@@ -1,0 +1,13 @@
+Postman Testing
+{
+  "id": "1",
+  "title": "school"
+}
+
+Lambda Testing
+{
+    "id": "1",
+    "body": {
+        "title": "school"
+    }
+}

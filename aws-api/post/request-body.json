@@ -1,0 +1,21 @@
+Postman Testing
+{
+	"username": "user1",
+	"title": "school",
+	"category": "homework",
+	"task1": "code",
+	"task2": "eat",
+	"task3": "sleep"
+}
+
+Lambda Testing
+{
+  "body": {
+  "username": "user1",
+  "title": "school",
+  "category": "homework",
+  "task1": "code",
+  "task2": "eat",
+  "task3": "sleep"
+  }
+}

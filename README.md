@@ -52,8 +52,8 @@ I had a really great time diving deeper into Express, Mocha, Chai, and MongoDB. 
 ## Other Implementations
 I also implemented a RESTful API on AWS via API Gateway, Lambda, and DynamoDB. This API can be accessed via the API URLs below. It has full CRUD functionality and is by nature 'serverless'. It uses Lambda functions to talk to DynamoDB, I will leave the actual code to facilitate this in the project directory called 'aws-api'.
 
-Inline-style:
-![API Gateway RESTful API w/ CORS](http://imgur.com/a/Py5JB "AWS RESTful API")
+API Gateway RESTful API w/ CORS:
+![alt text](https://github.com/znergy/coding-challenge/public/img/api-gateway.png "AWS RESTful API")
 
 ## AWS API URLs (Using API Gateway, Lambda, and DynamoDB written in NodeJS)
 There is sample data populated you will be able to see by looking at the GET API URL. You can run these API URLs by using a simple AJAX call or in Postman. For information on testing these in Postman, go to the aws-api/{method}/request-body.json file. I also pre-loaded data into DynamoDB, which you can find in the dynamodb-data.json file.

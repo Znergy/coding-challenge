@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const Todolist = require('../models/todolist')
-const List = require('../data/sample-data')
 const async = require('async')
 
 // get all todolists
@@ -78,7 +77,7 @@ function populateDB() {
       })
     }
   ], function(err, results) {
-    console.log({message: 'Database has been populated!', todolists: results})
+    console.log('Database has been populated!')
   })
 }
 

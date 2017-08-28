@@ -22,10 +22,9 @@ mongoose.connect(config.DBHost, {
 let db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 
-todolist.populateDB()
-
 if(config.util.getEnv('NODE_ENV') !== 'test') {
     app.use(morgan('combined'))
+    todolist.populateDB()
 }
 
 app.use(express.static('public'))
@@ -34,7 +33,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.text())
 app.use(bodyParser.json({ type: 'application/json'}))
 
-app.get("/", (req, res) => res.sendFile('index.html'))
+app.get("/", (req, res) => {
+  res.sendFile('index.html')
+})
 
 app.route("/api/v1/todolists")
     .get(todolist.getTodolists)

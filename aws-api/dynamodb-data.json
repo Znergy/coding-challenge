@@ -1,0 +1,82 @@
+{
+    "Items": [
+        {
+            "category": "school",
+            "tasks": [
+                "ECON",
+                "MATH"
+            ],
+            "username": "user2",
+            "id": "2",
+            "title": "study"
+        },
+        {
+            "category": "school",
+            "tasks": [
+                "code",
+                "read",
+                "study"
+            ],
+            "username": "user1",
+            "id": "1",
+            "title": "homework"
+        },
+        {
+            "category": "generic",
+            "tasks": [
+                "change oil on my truck",
+                "fix the water heater",
+                "replace iphone screen"
+            ],
+            "username": "user5",
+            "id": "5",
+            "title": "repairs"
+        },
+        {
+            "category": "homework",
+            "tasks": [
+                "code",
+                "code",
+                "sleep"
+            ],
+            "username": "user5",
+            "id": "153",
+            "title": "school"
+        },
+        {
+            "category": "chores",
+            "tasks": [
+                "take the trash out",
+                "do laundry",
+                "wash dishes"
+            ],
+            "username": "user4",
+            "id": "4",
+            "title": "cleaning"
+        },
+        {
+            "category": "work",
+            "tasks": [
+                "AWS",
+                "Documentation",
+                "APIs"
+            ],
+            "username": "user3",
+            "id": "3",
+            "title": "Programming"
+        },
+        {
+            "category": "military",
+            "tasks": [
+                "talk to pilot",
+                "eat",
+                "sleep"
+            ],
+            "username": "jay",
+            "id": "6287",
+            "title": "gunner"
+        }
+    ],
+    "Count": 7,
+    "ScannedCount": 7
+}
